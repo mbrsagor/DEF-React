@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import DeviceService from '../services/DeviceService';
+import {ToastsContainer, ToastsStore} from 'react-toasts';
 
 const device_service = new DeviceService();
 
@@ -13,9 +14,7 @@ class DeviceForm extends Component {
             name: '',
             device_id: '',
             device_type: '',
-            status: '',
-            type1: 'Type 1',
-            type2: 'Type 2',
+            status: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -28,15 +27,17 @@ class DeviceForm extends Component {
             'device_type': this.refs.device_type.value,
             'status': this.refs.status.value
         }).then((response => {
-            console.log(response.data);
+            ToastsStore.success('successfully added the device!');
         })).catch((error) => {
-            console.log("Error is: ", error);
+            ToastsStore.warning('Something went wrong while creating device.??', error);
         })
     }
 
     // Submit handler
     handleSubmit(event) {
         this.handleCreate();
+        event.preventDefault();
+        event.target.reset();
     }
 
     render() { 
@@ -91,6 +92,7 @@ class DeviceForm extends Component {
                         <button type="submit" className="btn btn-success btn-sm">Save</button>
                      </div>
                     </form>
+                    <ToastsContainer store={ToastsStore} />
                 </div>
             </>
         );
