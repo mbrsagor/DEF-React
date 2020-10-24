@@ -1,20 +1,45 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
+import DeviceService from '../services/DeviceService';
+
+const device_service = new DeviceService();
 
 
 class DeviceForm extends Component {
-    state = {
-        values: [
-        { name: 'type 1', id: 1 },
-        { name: 'type 2', id: 2 },
-        { name: 'type 3', id: 3 },
-        { name: 'type 4', id: 4 }
-      ]
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            device_id: '',
+            device_type: '',
+            status: '',
+            type1: 'Type 1',
+            type2: 'Type 2',
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    // create handler
+    handleCreate() {
+        device_service.deviceCreate({
+            'name': this.refs.name.value,
+            'device_id': this.refs.device_id.value,
+            'device_type': this.refs.device_type.value,
+            'status': this.refs.status.value
+        }).then((response => {
+            console.log(response.data);
+        })).catch((error) => {
+            console.log("Error is: ", error);
+        })
+    }
+
+    // Submit handler
+    handleSubmit(event) {
+        this.handleCreate();
+    }
+
     render() { 
-        let optionTemplate = this.state.values.map(v => (
-            <option value={v.id}>{v.name}</option>
-        ));
         return (
             <>
             <div className="add_device">
@@ -49,14 +74,17 @@ class DeviceForm extends Component {
                                     <div className="form-group">
                                         <label htmlFor="device_type">Enter Device Type</label>
                                         <select value={this.state.value} ref="device_type" className="form-control" name="device_type" id="device_type">
-                                            {optionTemplate}
+                                            <option value="type1">Type 1</option>
+                                            <option value="type2">Type 2</option>
+                                            <option value="type3">Type 3</option>
+                                            <option value="type4">Type 4</option>
                                         </select>
                                     </div>
                                 </Col>
                                 <Col lg={6}>
                                     <div className="custom-control custom-checkbox mt-4">
                                         <input name="status" ref="status" type="checkbox" className="custom-control-input" id="status"/>
-                                        <label className="custom-control-label" for="status">Enter Device Status</label>
+                                        <label className="custom-control-label" htmlFor="status">Enter Device Status</label>
                                     </div>
                                 </Col>
                             </Row>
