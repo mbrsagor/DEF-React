@@ -11,7 +11,7 @@ class AddDevice extends Component {
                 <Header />
                 <Container className="mt-5">
                     <Row>
-                        <Col lg={6} offset={3}>
+                        <Col lg={12}>
                             <div className="card">
                                 <div className="card-header">Add New Device</div>
                                 <div className="card-body">
