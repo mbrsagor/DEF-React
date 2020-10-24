@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Form } from 'react-bootstrap';
 import Header from '../common/Header';
+import { Container, Row, Col } from 'react-bootstrap';
+import DeviceForm from './DeviceForm'
 
 class AddDevice extends Component {
     state = {  }
@@ -8,6 +9,18 @@ class AddDevice extends Component {
         return (
             <>
                 <Header />
+                <Container className="mt-5">
+                    <Row>
+                        <Col lg={6} offset={3}>
+                            <div className="card">
+                                <div className="card-header">Add New Device</div>
+                                <div className="card-body">
+                                    <DeviceForm/>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
             </>
         );
     }

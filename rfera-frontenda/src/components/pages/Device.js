@@ -72,6 +72,7 @@ class Device extends Component {
                                         <th>Name</th>
                                         <th>Device id</th>
                                         <th>Device type</th>
+                                        <th>Statue</th>
                                         <th>Created date</th>
                                         <th>Updated date</th>
                                         <th className="text-center">Actions</th>
@@ -84,6 +85,7 @@ class Device extends Component {
                                                 <td>{device.name}</td>
                                                 <td>{device.device_id}</td>
                                                 <td>{device.device_type}</td>
+                                                <td>{device.status ? 'Active' : 'Inactive'}</td>
                                                 <td><Moment format='MMMM Do YYYY, h:mm:ss a'>{device.created_at}</Moment></td>
                                                 <td><Moment format='MMMM Do YYYY, h:mm:ss a'>{device.updated_at}</Moment></td>
                                                 <td className="text-center">

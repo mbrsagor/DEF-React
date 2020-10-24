@@ -6,7 +6,7 @@ from .serializers import DeviceSerializer
 
 
 class DeviceViewSet(ModelViewSet):
-    queryset = Device.objects.all()
+    queryset = Device.objects.all().order_by('-id')
     serializer_class = DeviceSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['name', 'device_id']

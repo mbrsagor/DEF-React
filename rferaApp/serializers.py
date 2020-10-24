@@ -6,5 +6,5 @@ class DeviceSerializer(ModelSerializer):
     class Meta:
         model = Device
         fields = [
-            'id', 'name', 'device_id', 'device_type', 'created_at', 'updated_at'
+            'id', 'name', 'device_id', 'device_type', 'status', 'created_at', 'updated_at'
         ]
