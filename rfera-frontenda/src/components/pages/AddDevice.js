@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
+import { Form } from 'react-bootstrap';
 import Header from '../common/Header';
 
-class Event extends Component {
+class AddDevice extends Component {
     state = {  }
     render() { 
         return (
             <>
                 <Header />
-                <h2>I'm Event page</h2>
             </>
         );
     }
 }
  
-export default Event;
+export default AddDevice;

@@ -2,22 +2,23 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Header from '../common/Header';
 
-class Device extends Component {
-    state = {  }
+class Error404 extends Component {
+    
     render() { 
         return (
             <>
                 <Header />
                 <Container>
                     <Row>
-                        <Col lg={12}>
-                            <h2>Hello we are Device page</h2>
+                        <Col lg={6}>
+                            <h2>Sorry! 404 Not Found</h2>
                         </Col>
                     </Row>
                 </Container>
             </>
-        );
+        )
     }
 }
  
-export default Device;
+export default Error404;
+

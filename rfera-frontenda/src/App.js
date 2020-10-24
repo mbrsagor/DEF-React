@@ -4,20 +4,21 @@ import '../src/scss/style.scss';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // Component
-import Header from './components/common/Header';
 import Device from './components/pages/Device';
 import Event from './components/pages/Event';
+import AddDevice from './components/pages/AddDevice';
+import Error404 from './components/pages/Error404';
 
 class App extends Component {
   render() {
     return (
       <>
-        <Header />
         <BrowserRouter>
           <Switch>
-            <Route path="/" component={Device} />
-            <Route path="/dashboard" component={Event} />
-            {/* <Route component={Error404} /> */}
+            <Route exact path="/" component={Device} />
+            <Route path="/add-device" component={AddDevice} />
+            <Route path="/event" component={Event} />
+            <Route component={Error404} />
         </Switch>
       </BrowserRouter>
       </>
