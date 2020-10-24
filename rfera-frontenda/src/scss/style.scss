@@ -36,3 +36,15 @@ body {
         }
     }
 }
+
+.actions svg{
+    width: 16px;
+    height: 16px;
+}
+
+.swal-footer {
+    text-align: center !important;
+    .swal-button {
+        padding: 7px 13px !important;
+    }
+}
