@@ -1,10 +1,25 @@
-import React, {component} from 'react';
+import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../src/scss/style.scss';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-class App extends React.Component {
+// Component
+import Header from './components/common/Header';
+import Device from './components/pages/Device';
+import Event from './components/pages/Event';
+
+class App extends Component {
   render() {
     return (
       <>
-        <h2>Welcome...</h2>
+        <Header />
+        <BrowserRouter>
+          <Switch>
+            <Route path="/" component={Device} />
+            <Route path="/dashboard" component={Event} />
+            {/* <Route component={Error404} /> */}
+        </Switch>
+      </BrowserRouter>
       </>
     )
   }
