@@ -27,7 +27,7 @@ ALTER ROLE "macair" WITH PASSWORD 'p12345678';
 ALTER USER naciar CREATEDB;
 CREATE EXTENSION postgis;
 ```
-If you have use diffrent database or users you may change the information form Database config file.
+If you have use different database or users you may change the information form Database config file.
 
 
 
@@ -53,7 +53,7 @@ Activate it:
 ```bash
 source venv/bin/activate
 ```
-Install the python dependancies which includes django and other libraries and run the app locally.
+Install the python dependencies which includes django and other libraries and run the app locally.
 
 ```
 pip3 install -r requirements.txt
