@@ -27,7 +27,7 @@ ALTER ROLE "macair" WITH PASSWORD 'p12345678';
 ALTER USER naciar CREATEDB;
 CREATE EXTENSION postgis;
 ```
-If you have use different database or users you may change the information form Database config file.
+If you have use different information database you may change the previous information form Database config directory and `db_development.py` file.
 
 
 
@@ -68,3 +68,5 @@ cd rfera-frontenda
 npm install
 npm start
 ```
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
