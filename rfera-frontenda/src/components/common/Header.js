@@ -16,7 +16,7 @@ class Header extends Component {
                                     <Nav className="ml-auto">
                                         <ul className="main_menu mt-3">
                                             <li><Link to="/">Home</Link></li>
-                                            <li> <Link to="/add-device">Device</Link></li>
+                                            <li> <Link to="/add-device">Add Device</Link></li>
                                             <li> <Link to="/event">Event</Link></li>
                                         </ul>
                                     </Nav>
