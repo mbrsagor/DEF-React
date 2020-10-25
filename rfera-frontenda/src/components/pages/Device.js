@@ -8,6 +8,7 @@ import Moment from 'react-moment';
 import swal from 'sweetalert';
 import SearchFilter from '../common/SearchFilter';
 import Spinner from '../common/Spinner';
+import Pagination from '../common/Pagination'
 
 
 const device_service = new DeviceService();
@@ -121,6 +122,7 @@ class Device extends Component {
                                 })}
                                 </tbody>
                             </Table>
+                            <Pagination />
                         </Col>
                     </Row>
                 </Container>
