@@ -16,7 +16,7 @@ class DeviceForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // // show device information form
+    // show device information form
     // componentDidMount(){
     //   const {match: {params}} = this.props;
     //   if(params.id){
@@ -60,13 +60,7 @@ class DeviceForm extends Component {
 
     // Submit handler
     handleSubmit(event) {
-        const { match: { params } } = this.props;
-        if (params && params.id) {
-            this.handleUpdate(params.id);
-        } else {
-         this.handleCreate();   
-        }
-        // this.handleCreate();
+        this.handleCreate();
         event.preventDefault();
         event.target.reset();
     }
