@@ -7,7 +7,7 @@ import Header from '../common/Header';
 const device_service = new DeviceService();
 
 
-class DeviceUpdate extends Component {
+class DeviceAddUpdate extends Component {
 
     constructor(props) {
         super(props);
@@ -63,9 +63,9 @@ class DeviceUpdate extends Component {
             this.handleUpdate(params.id);
         } else {
             this.handleCreate();
+            event.target.reset();
         }
         event.preventDefault();
-        event.target.reset();
     }
 
     render() {
@@ -132,4 +132,4 @@ class DeviceUpdate extends Component {
     }
 }
 
-export default DeviceUpdate;
+export default DeviceAddUpdate;

@@ -13,7 +13,7 @@ export default class DeviceService {
         return axios.post(url, device);
     }
     getDevice(id) {
-        const url = `${API_BASE_URL}/api/device/${id}`;
+        const url = `${API_BASE_URL}/api/device/${id}/`;
         return axios.get(url).then(response => response.data);
     }
     deviceupdate(device) {
