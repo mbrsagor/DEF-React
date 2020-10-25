@@ -90,7 +90,7 @@ class Device extends Component {
                                                 <td><Moment format='MMMM Do YYYY, h:mm:ss a'>{device.updated_at}</Moment></td>
                                                 <td className="text-center">
                                                     <div className="actions">
-                                                        <Link className="btn btn-success btn-sm mr-2" to="/">
+                                                        <Link className="btn btn-success btn-sm mr-2" to={`/add-device/${device.id}`}>
                                                             <FeatherIcon icon="edit-2" />
                                                         </Link>
                                                         <Link onClick={e => this.handleDelete(e, device.id)} className="btn btn-danger btn-sm" to="/">

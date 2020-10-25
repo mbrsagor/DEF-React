@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import Header from '../common/Header';
+import Device from './Device';
 
 class Event extends Component {
     state = {  }
     render() { 
         return (
             <>
-                <Header />
-                <h2>I'm Event page</h2>
+                <Device />
             </>
         );
     }

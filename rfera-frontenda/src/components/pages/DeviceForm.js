@@ -11,13 +11,23 @@ class DeviceForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
-            device_id: '',
-            device_type: '',
-            status: ''
+            device_type: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    // // show device information form
+    // componentDidMount(){
+    //   const {match: {params}} = this.props;
+    //   if(params.id){
+    //       device_service.getDevice(params.id).then((device) => {
+    //           this.refs.name.value = device.name;
+    //           this.refs.device_id.value = device.device_id;
+    //           this.refs.device_type.value = device.device_type;
+    //           this.refs.status.value = device.status;
+    //       });
+    //   }
+    // }
 
     // create handler
     handleCreate() {
@@ -33,9 +43,30 @@ class DeviceForm extends Component {
         })
     }
 
+    // update department handler
+    handleUpdate(id) {
+        device_service.deviceupdate({
+            'id': id,
+            'name': this.refs.name.value,
+            'device_id': this.refs.device_id.value,
+            'device_type': this.refs.device_type.value,
+            'status': this.refs.status.value
+        }).then((response => {
+            ToastsStore.success('successfully update the device!');
+        })).catch((error) => {
+            ToastsStore.warning('Something went wrong while updateing device.??', error);
+        })
+    }
+
     // Submit handler
     handleSubmit(event) {
-        this.handleCreate();
+        const { match: { params } } = this.props;
+        if (params && params.id) {
+            this.handleUpdate(params.id);
+        } else {
+         this.handleCreate();   
+        }
+        // this.handleCreate();
         event.preventDefault();
         event.target.reset();
     }
@@ -54,7 +85,6 @@ class DeviceForm extends Component {
                                             className="form-control"
                                             id="name"
                                             ref="name"
-                                            name="name"
                                             placeholder="Enter device name"
                                         />
                                     </div>
@@ -66,7 +96,6 @@ class DeviceForm extends Component {
                                             className="form-control"
                                             id="device_id"
                                             ref="device_id"
-                                            name="device_id"
                                             placeholder="Enter device id"
                                         />
                                     </div>
@@ -74,7 +103,7 @@ class DeviceForm extends Component {
                                 <Col lg={6}>
                                     <div className="form-group">
                                         <label htmlFor="device_type">Enter Device Type</label>
-                                        <select value={this.state.value} ref="device_type" className="form-control" name="device_type" id="device_type">
+                                        <select value={this.state.value} ref="device_type" className="form-control" id="device_type">
                                             <option value="type1">Type 1</option>
                                             <option value="type2">Type 2</option>
                                             <option value="type3">Type 3</option>
@@ -84,7 +113,7 @@ class DeviceForm extends Component {
                                 </Col>
                                 <Col lg={6}>
                                     <div className="custom-control custom-checkbox mt-4">
-                                        <input name="status" ref="status" type="checkbox" className="custom-control-input" id="status"/>
+                                        <input ref="status" type="checkbox" className="custom-control-input" id="status"/>
                                         <label className="custom-control-label" htmlFor="status">Enter Device Status</label>
                                     </div>
                                 </Col>
