@@ -7,6 +7,8 @@ import FeatherIcon from 'feather-icons-react';
 import Moment from 'react-moment';
 import swal from 'sweetalert';
 import SearchFilter from '../common/SearchFilter';
+import Spinner from '../common/Spinner';
+
 
 const device_service = new DeviceService();
 
@@ -23,7 +25,7 @@ class Device extends Component {
         var self = this;
         device_service.deviceList()
             .then(function (response) {
-                self.setState({ devices: response.results });
+                self.setState({ devices: response.results});
                 console.log(response);
             }).catch(error => {
                 console.log("Error: ", error);
@@ -56,7 +58,18 @@ class Device extends Component {
         })
     }
     
-    render() { 
+    render() {
+
+        // Spinner 
+        if (this.state.devices.length === 0) {
+            return (
+                <div className="text-center">
+                    <Spinner />
+                </div>
+            )
+        }
+        // Spinner
+
         return (
             <>
                 <Header />

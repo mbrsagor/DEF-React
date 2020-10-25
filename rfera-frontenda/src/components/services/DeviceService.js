@@ -24,4 +24,9 @@ export default class DeviceService {
         const url = `${API_BASE_URL}/api/device/${device.id}/`;
         return axios.delete(url);
     }
+
+    getDeviceByURL(link){
+        const url = `${API_BASE_URL}${link}`;
+        return axios.get(url).then(response => response.data);
+    }
 }
