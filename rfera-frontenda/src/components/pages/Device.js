@@ -14,7 +14,8 @@ class Device extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { devices: [] }
+        this.state = { devices: [] };
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     // Fetch data from server
@@ -94,12 +95,12 @@ class Device extends Component {
                                                 <td><Moment format='MMMM Do YYYY, h:mm:ss a'>{device.updated_at}</Moment></td>
                                                 <td className="text-center">
                                                     <div className="actions">
-                                                        <Link className="btn btn-success btn-sm mr-2" to={`/add-device/${device.id}`}>
+                                                        <Link className="btn btn-success btn-sm mr-2" to={`/update/${device.id}`}>
                                                             <FeatherIcon icon="edit-2" />
                                                         </Link>
-                                                        <Link onClick={e => this.handleDelete(e, device.id)} className="btn btn-danger btn-sm" to="/">
+                                                        <button onClick={e => this.handleDelete(e, device.id)} className="btn btn-danger btn-sm">
                                                             <FeatherIcon icon="trash" />
-                                                        </Link>
+                                                        </button>
                                                     </div>
                                                 </td>
                                         </tr>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 class SearchFilter extends Component {
-    state = {}
     render() { 
         return (
             <>
@@ -9,6 +8,8 @@ class SearchFilter extends Component {
                     className="form-control"
                     placeholder="Search device"
                     type="text"
+                    name="name"
+                    onChange={this.onChangeHandler}
                 />
             </>
         );
