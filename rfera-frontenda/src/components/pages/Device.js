@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 import Moment from 'react-moment';
 import swal from 'sweetalert';
+import SearchFilter from '../common/SearchFilter';
 
 const device_service = new DeviceService();
 
@@ -59,9 +60,12 @@ class Device extends Component {
             <>
                 <Header />
                 <Container>
-                    <Row>
-                        <Col lg={12}>
-                            <h2>List of device page</h2>
+                    <Row className="mt-3 mb-3">
+                        <Col lg={3}>
+                            <SearchFilter />
+                        </Col>
+                        <Col className="text-right">
+                            <Link className="btn btn-info btn-sm" to="/add-device"> <FeatherIcon icon="plus" /> </Link>
                         </Col>
                     </Row>
                     <Row>

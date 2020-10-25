@@ -3,6 +3,14 @@
     margin: 0;
 }
 
+a {
+    transition: .6s;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
 
 $primary_color: #666666;
@@ -22,7 +30,6 @@ body {
 
     a {
         color: $white_color !important;
-        transition: .6s;
     }
 
     .main_menu li {
@@ -31,8 +38,6 @@ body {
 
         a:hover {
             color: $primary_color !important;
-            text-decoration: none;
-
         }
     }
 }

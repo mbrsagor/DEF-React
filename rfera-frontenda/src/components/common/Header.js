@@ -15,8 +15,8 @@ class Header extends Component {
                                 <Navbar.Collapse id="basic-navbar-nav">
                                     <Nav className="ml-auto">
                                         <ul className="main_menu mt-3">
-                                            <li> <Link to="/add-device">Device</Link></li>
                                             <li> <Link to="/">Event</Link></li>
+                                            <li> <Link to="/add-device">Device</Link></li>
                                         </ul>
                                     </Nav>
                                 </Navbar.Collapse>
