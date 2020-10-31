@@ -114,7 +114,7 @@ class DeviceAddUpdate extends Component {
                                             </Col>
                                             <Col lg={6}>
                                                 <div className="custom-control custom-checkbox mt-4">
-                                                    <input ref="status" type="checkbox" className="custom-control-input" id="status" />
+                                                    <input ref="status" type="checkbox" className="custom-control-input" id="status" checked/>
                                                     <label className="custom-control-label" htmlFor="status">Enter Device Status</label>
                                                 </div>
                                             </Col>
