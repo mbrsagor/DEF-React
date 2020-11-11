@@ -7,5 +7,7 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function() {
-  this.route('cart', {path: 'shoping-cart'});
+  this.route('market', function() {
+    this.route('dokan');
+  });
 });
