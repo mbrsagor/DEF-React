@@ -10,4 +10,5 @@ Router.map(function() {
   this.route('market', function() {
     this.route('dokan');
   });
+  this.route('item');
 });
