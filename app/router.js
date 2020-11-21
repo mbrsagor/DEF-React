@@ -6,9 +6,8 @@ export default class Router extends EmberRouter {
   rootURL = config.rootURL;
 }
 
-Router.map(function() {
-  this.route('market', function() {
-    this.route('dokan');
-  });
+Router.map(function () {
+  this.route("/");
+  this.route('market');
   this.route('item');
 });
