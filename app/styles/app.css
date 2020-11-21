@@ -24,4 +24,17 @@
 .cart-link:hover {
     text-decoration: none;
   }
-  
+
+img {
+ width: 100%;
+}
+a {
+  text-decoration: none;
+  transition: .6s;
+  color: #666666;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #666666;
+}
